@@ -1,0 +1,35 @@
+<div class="card-header">
+  <div>
+    <h2>
+      {{ team.full_name }} <span>[{{ team.abbreviation }}]</span>
+    </h2>
+    <span class="conference">{{ team.conference | conference }}</span>
+  </div>
+  <button id="remove{{ team.abbreviation }}" (click)="remove()">x</button>
+</div>
+<div class="card-content">
+  <div>
+    <div>
+      <p>Result of the past 12 days:</p>
+      <div class="game-result">
+        <app-game-badge *ngFor="let game of recentGames | async" [game]="game">
+        </app-game-badge>
+      </div>
+    </div>
+    <p>
+      Avg points scored:
+      <span class="score">{{ average_score | number: '1.0-0' }}</span>
+    </p>
+    <p>
+      Avg points conceded:
+      <span class="score">{{ average_conceded | number: '1.0-0' }}</span>
+    </p>
+
+    <a class="result-btn" [routerLink]="['results', team.id]">
+      See game results >>
+    </a>
+  </div>
+  <div>
+    <img src="https://interstate21.com/nba-logos/{{ team.abbreviation }}.png" />
+  </div>
+</div>

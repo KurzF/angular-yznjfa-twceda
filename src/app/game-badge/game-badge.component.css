@@ -1,0 +1,16 @@
+:host.win {
+  background-color: green;
+}
+
+:host {
+  width: 2rem;
+  height: 2rem;
+  background-color: red;
+  border-radius: 1000px;
+  text-align: center;
+
+  margin: 0 0.2rem;
+}
+* {
+  color: white;
+}

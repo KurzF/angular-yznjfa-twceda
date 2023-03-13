@@ -1,0 +1,46 @@
+:host {
+  border: 5px solid;
+
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+.name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.game-result {
+  display: flex;
+  flex-direction: row;
+  max-width: 200px;
+}
+
+.card-content {
+  display: flex;
+  padding: 1em 1em;
+  align-items: flex-start;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  padding: 0 1em;
+}
+
+.score {
+  font-weight: bold;
+  padding: 0.2em;
+}
+img {
+  max-width: 100%;
+}
+
+.result-btn {
+  white-space: nowrap;
+  background-color: green;
+  color: white;
+  padding: 0.5em 1em;
+}

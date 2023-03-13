@@ -1,0 +1,22 @@
+<p *ngIf="team$ === undefined">Unknown team code</p>
+<div class="card-header" *ngIf="team$ | async as team">
+  <div>
+    <h2>
+      {{ team.full_name }} <span>[{{ team.abbreviation }}]</span>
+    </h2>
+    <span class="conference">{{ team.conference | conference }}</span>
+  </div>
+</div>
+<div class="card-content">
+  <p>Scores the past 12 days:</p>
+  <div class="game-result">
+    <div *ngFor="let game of recentGames$ | async">
+      <span class="team">{{ game.home_team.abbreviation }}</span>
+      {{ game.home_team_score }} - {{ game.visitor_team_score }}
+      <span class="team">{{ game.visitor_team.abbreviation }}</span>
+    </div>
+  </div>
+  <a id="backBtn" class="back-btn" [routerLink]="['']"
+    >&lt;&lt; Back to all team stats</a
+  >
+</div>
