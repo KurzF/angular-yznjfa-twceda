@@ -25,7 +25,11 @@
       <span class="score">{{ average_conceded | number: '1.0-0' }}</span>
     </p>
 
-    <a class="result-btn" [routerLink]="['results', team.id]">
+    <a
+      id="results{{ team.abbreviation }}"
+      class="result-btn"
+      [routerLink]="['results', team.id]"
+    >
       See game results >>
     </a>
   </div>
