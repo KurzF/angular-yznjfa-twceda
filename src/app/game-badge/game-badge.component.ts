@@ -19,12 +19,10 @@ export class GameBadgeComponent implements AfterViewInit {
 
   @HostBinding('class.win')
   get isWin(): boolean {
-    if (
-      this.game.home_team_score > this.game.visitor_team_score &&
-      this.game.home_team.id === this.teamService.team?.id
-    ) {
-      return true;
+    if (this.game.home_team_score > this.game.visitor_team_score) {
+      return this.game.home_team.id === this.teamService.team?.id;
+    } else {
+      return this.game.visitor_team.id === this.teamService.team?.id;
     }
-    return false;
   }
 }
